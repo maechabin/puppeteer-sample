@@ -30,6 +30,9 @@ const puppeteer = require('puppeteer');
   /** フォーカスを検索ボタンに移動 */
   await page.focus('input[name=btnK]');
 
+  /** 2秒間待機 */
+  await page.waitFor(2000);
+
   /** ボタンをクリックする */
   await page.click('input[name=btnK]');
 
