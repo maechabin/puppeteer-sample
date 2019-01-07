@@ -27,6 +27,9 @@ const puppeteer = require('puppeteer');
   /** Webページのスクリーンショットを撮る */
   await page.screenshot({ path: './screenshot/example.png' });
 
+  /** フォーカスを検索ボタンに移動 */
+  await page.focus('input[name=btnK]');
+
   /** ボタンをクリックする */
   await page.click('input[name=btnK]');
 
