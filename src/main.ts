@@ -1,6 +1,7 @@
 import * as puppeteer from 'puppeteer';
 
 (async () => {
+  /** 自動操作したいページのURL */
   const TARGET_URL = 'https://www.google.co.jp';
 
   /** puppeteerを起動 */
@@ -30,14 +31,29 @@ import * as puppeteer from 'puppeteer';
   /** フォーカスを検索ボタンに移動 */
   await page.focus('input[name=btnK]');
 
-  /** 2秒間待機 */
-  await page.waitFor(2000);
-
   /** ボタンをクリックする */
   await page.click('input[name=btnK]');
 
+  /** 2秒間待機 */
+  await page.waitFor(3000);
+
   /** Webページのスクリーンショットを撮る */
-  await page.screenshot({ path: './screenshot/example2.png' });
+  await page.screenshot({ path: './screenshot/example2.png', fullPage: true });
+
+  /**
+   * 指定のリンクをクリック
+   * selectorをちゃんと指定しないと
+   * Error: No node found for selector: .r:nth-child(2) a のようなエラーが出る
+   */
+  await page.click(
+    '#rso > div > div > div:nth-child(2) > div > div > div.r > a',
+  );
+
+  /** Webページのスクリーンショットを撮る */
+  await page.screenshot({
+    path: './screenshot/example3.png',
+    fullPage: false,
+  });
 
   /** 手動でブラウザを終了する */
   await browser.close();
