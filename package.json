@@ -1,12 +1,12 @@
 {
   "name": "puppeteer-sample",
   "version": "1.0.0",
-  "description": "",
-  "main": "screenshot.js",
+  "description": "puppeteer sample",
+  "main": "./dist/main.js",
   "scripts": {
     "build": "tsc",
     "build:w": "tsc -w",
-    "start": "node screenshot.js",
+    "start": "node ./dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@maechabin",

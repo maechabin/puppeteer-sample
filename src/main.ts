@@ -35,8 +35,8 @@ import * as fs from 'fs';
   /** ボタンをクリックする */
   await page.click('input[name=btnK]');
 
-  /** 2秒間待機 */
-  await page.waitFor(3000);
+  /**  1秒間待機 */
+  await page.waitFor(1000);
 
   /** Webページのスクリーンショットを撮る */
   await page.screenshot({ path: './screenshot/example2.png', fullPage: true });
