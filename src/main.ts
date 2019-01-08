@@ -40,6 +40,22 @@ import * as puppeteer from 'puppeteer';
   /** Webページのスクリーンショットを撮る */
   await page.screenshot({ path: './screenshot/example2.png', fullPage: true });
 
+  /** スクレイピング */
+  const text = await page.evaluate(
+    (): (string | null)[] => {
+      const results: (string | null)[] = [];
+      const elems = document.querySelectorAll('.LC20lb');
+      if (elems !== null && elems.length > 0) {
+        elems.forEach(
+          (elem: Element): void => {
+            results.push(elem.textContent);
+          },
+        );
+      }
+      return results;
+    },
+  );
+
   /**
    * 指定のリンクをクリック
    * selectorをちゃんと指定しないと
