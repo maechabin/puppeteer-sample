@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+import * as puppeteer from 'puppeteer';
 
 (async () => {
   const TARGET_URL = 'https://www.google.co.jp';

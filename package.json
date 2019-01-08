@@ -4,12 +4,17 @@
   "description": "",
   "main": "screenshot.js",
   "scripts": {
+    "build": "tsc",
     "start": "node screenshot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@maechabin",
   "license": "MIT",
   "dependencies": {
+    "@types/puppeteer": "^1.11.1",
     "puppeteer": "^1.11.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.2"
   }
 }
