@@ -1,4 +1,5 @@
 import * as puppeteer from 'puppeteer';
+import * as fs from 'fs';
 
 (async () => {
   /** 自動操作したいページのURL */
@@ -55,6 +56,14 @@ import * as puppeteer from 'puppeteer';
       return results;
     },
   );
+
+  /** ファイルに書き込む */
+  fs.writeFile('data/example.txt', JSON.stringify(text), err => {
+    if (err) {
+      throw err;
+    }
+    console.log('done');
+  });
 
   /**
    * 指定のリンクをクリック
